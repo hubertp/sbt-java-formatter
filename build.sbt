@@ -4,14 +4,15 @@ lazy val plugin = project
   .in(file("plugin"))
   .enablePlugins(SbtPlugin)
   .settings(
-    organization := "com.lightbend.sbt",
-    organizationName := "Lightbend Inc.",
-    organizationHomepage := Some(url("https://lightbend.com")),
+    organization := "io.github.hubertp",
     name := "sbt-java-formatter",
     homepage := scmInfo.value.map(_.browseUrl),
     scmInfo := Some(ScmInfo(url("https://github.com/sbt/sbt-java-formatter"), "scm:git:git@github.com:sbt/sbt-java-formatter.git")),
     developers := List(Developer("ktoso", "Konrad 'ktoso' Malawski", "<ktoso@project13.pl>", url("https://github.com/ktoso"))),
-    libraryDependencies ++= Seq("com.google.googlejavaformat" % "google-java-format" % "1.7"),
+    libraryDependencies ++= Seq(
+        "com.google.googlejavaformat" % "google-java-format" % "1.18.1"
+    ),
+
     startYear := Some(2015),
     description := "Formats Java code in your project.",
     licenses += ("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0.html")),
